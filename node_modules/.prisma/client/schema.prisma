@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model aircrafts_data {
+  aircraft_code String @db.Char(3)
+  model         String @unique
+  range         Int    @unique @default(autoincrement())
+}
+
+model airports_data {
+  airport_code String @unique @db.Char(3)
+  airport_name Json
+  city         Json
+  timezone     String
+}
+
+model nba_data {
+  player_name     String @unique
+  player_number   Int
+  player_team     String
+  player_position String
+}

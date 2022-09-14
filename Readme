@@ -1,0 +1,7 @@
+Apollo Sever set up:
+
+1. Define your GraphQL schema
+2. Define your data set
+3. Define a resolver
+
+Resolvers call the prisma client to access the database.
